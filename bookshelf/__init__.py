@@ -5,7 +5,8 @@ from bookshelf.admin.controllers import admin
 
 app = Flask(__name__,
             instance_path=get_instance_folder_path(),
-            instance_relative_config=True)
+            instance_relative_config=True,
+            template_folder='templates')
 
 app.config.from_object('bookshelf.config.DevelopmentConfig')
 app.config.from_pyfile('config.cfg', silent=True)
