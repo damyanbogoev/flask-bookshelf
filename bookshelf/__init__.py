@@ -6,7 +6,8 @@ from bookshelf.config import configure_app
 
 app = Flask(__name__,
             instance_path=get_instance_folder_path(),
-            instance_relative_config=True)
+            instance_relative_config=True,
+            template_folder='templates')
 
 configure_app(app)
 
