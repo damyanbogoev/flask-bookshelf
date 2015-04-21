@@ -10,5 +10,12 @@ Branch names are hyperlinks to the corresponding repository branches.
   <li>Structure the Application(<a href="https://github.com/damyanbogoev/flask-bookshelf/tree/structure" alt="structure">structure</a>)</li>
   <li>Application Configuration(<a href="https://github.com/damyanbogoev/flask-bookshelf/tree/configuration" alt="configuration">configuration</a>)</li>
   <li>Templating(<a href="https://github.com/damyanbogoev/flask-bookshelf/tree/templating" alt="templating">templating</a>)</li>
+  <li>Model and Data Management</li>
+  <li>Testing</li>
+  <li>Views and Web Forms</li>
+  <li>Error Management</li>
+  <li>Security</li>
+  <li>Optimizations: Caching, GZIP Compression and CDN</li>
+  <li>Internationalization</li>
+  <li>Deployment</li>
 </ol>
-more ...
