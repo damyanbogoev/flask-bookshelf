@@ -1,4 +1,4 @@
-# Flask Series
+# Flask Series [![Travic CI](https://travis-ci.org/damyanbogoev/flask-bookshelf.svg?style=flat)](https://travis-ci.org/damyanbogoev/flask-bookshelf)
 
 A project describing how to implement a Flask based application.
 
