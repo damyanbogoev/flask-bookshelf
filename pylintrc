@@ -1,0 +1,6 @@
+[REPORTS]
+# Disable the reporting and just show messages.
+reports=no
+
+[MESSAGES CONTROL]
+disable=print-statement
