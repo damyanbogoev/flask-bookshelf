@@ -16,6 +16,7 @@ Branch names are hyperlinks to the corresponding repository branches.
   <li>Error Management(logging)</li>
   <li>Security(security)</li>
   <li>Optimizations: Caching, GZIP Compression and CDN(optimization)</li>
+  <li>Health Checking and Monitoring(monitoring)</li>
   <li>Internationalization(localize)</li>
   <li>Deployment(deploy)</li>
 </ol>
