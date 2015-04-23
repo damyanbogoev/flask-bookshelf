@@ -10,6 +10,7 @@ app = Flask(__name__,
             template_folder='templates')
 
 configure_app(app)
+app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
 app.register_blueprint(main, url_prefix='/')
 app.register_blueprint(admin, url_prefix='/admin')

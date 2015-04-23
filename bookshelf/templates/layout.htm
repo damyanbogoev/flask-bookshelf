@@ -5,19 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initialscale=1">
     <title>Flask Bookshelf</title>
+    <meta charset="utf-8">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <!-- <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="{{ url_for('main.index') }}">Home</a>
-          <a class="navbar-brand" href="{{ url_for('admin.index') }}">Admin</a>
+          <a class="navbar-brand" href="#">Flask Bookshelf</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="{{ url_for('main.index') }}">Home</a></li>
+            <li><a class="navbar-brand" href="{{ url_for('main.display_books') }}">Books</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <!-- <li><a class="navbar-brand" href="{{ url_for('admin.index') }}">Admin</a></li> -->
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
     <div class="container">
     {% block container %}{% endblock %}
     </div>

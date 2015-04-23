@@ -1,0 +1,30 @@
+{% extends 'layout.htm' %}
+{% block container %}
+  <div class="top-pad">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>cover</th>
+          <th>title</th>
+          <th>author</th>
+          <th>rating</th>
+        </tr>
+      </thead>
+      <tbody>
+{% for title, data in books.iteritems() %}
+{# Checks if book is marked as hidden #}
+{%- if data.hidden %}{% continue %}{% endif %}
+        <tr>
+          <td>
+            <img src="{{ url_for('static', filename='images/books/') }}{{data.image}}"
+                alt="{{title}}"/>
+          </td>
+          <td>{{title | upper}}</td>
+          <td>{{data.author}}</td>
+          <td>{{data.rating}}</td>
+        </tr>
+{% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
