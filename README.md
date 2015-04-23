@@ -10,7 +10,7 @@ Branch names are hyperlinks to the corresponding repository branches.
 <ol start="0">
   <li><a href="http://damyanon.net/flask-series-environment/" title="Flask Series: Prepare the Environment">Prepare the Environment</a></li>
   <li><a href="http://damyanon.net/flask-series-structure/" title="Flask Series: Structure the Application">Structure the Application</a>(<a href="https://github.com/damyanbogoev/flask-bookshelf/tree/structure" title="structure">structure</a>)</li>
-  <li>Application Configuration(<a href="https://github.com/damyanbogoev/flask-bookshelf/tree/configuration" title="configuration">configuration</a>)</li>
+  <li><a href="http://damyanon.net/flask-series-configuration/" title="Flask Series: Application Configuration">Application Configuration</a>(<a href="https://github.com/damyanbogoev/flask-bookshelf/tree/configuration" title="configuration">configuration</a>)</li>
   <li>Templating(<a href="https://github.com/damyanbogoev/flask-bookshelf/tree/templating" title="templating">templating</a>)</li>
   <li>Model and Data Management(model)</li>
   <li>Testing(testing)</li>
