@@ -1,7 +1,6 @@
-from bookshelf import app
 from flask.ext.sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 
 class Book(db.Model):
