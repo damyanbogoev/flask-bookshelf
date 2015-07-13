@@ -3,6 +3,7 @@ from utils import get_instance_folder_path
 from bookshelf.main.controllers import main
 from bookshelf.admin.controllers import admin
 from bookshelf.config import configure_app
+from bookshelf.data.models import db
 
 app = Flask(__name__,
             instance_path=get_instance_folder_path(),
@@ -10,6 +11,7 @@ app = Flask(__name__,
             template_folder='templates')
 
 configure_app(app)
+db.init_app(app)
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
 app.register_blueprint(main, url_prefix='/')

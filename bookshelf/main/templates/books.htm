@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-{% for title, data in books.iteritems() %}
+{% for data in books %}
 {# Checks if book is marked as hidden #}
 {%- if data.hidden %}{% continue %}{% endif %}
         <tr>
@@ -19,8 +19,8 @@
             <img src="{{ url_for('static', filename='images/books/') }}{{data.image}}"
                 alt="{{title}}"/>
           </td>
-          <td>{{title | upper}}</td>
-          <td>{{data.author}}</td>
+          <td>{{data.title | upper}}</td>
+          <td>{{data.author.names}}</td>
           <td>{{data.rating}}</td>
         </tr>
 {% endfor %}
