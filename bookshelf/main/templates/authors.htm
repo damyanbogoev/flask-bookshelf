@@ -1,0 +1,21 @@
+{% extends 'layout.htm' %}
+{% block container %}
+  <div class="top-pad">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>names</th>
+        </tr>
+      </thead>
+      <tbody>
+{% for data in authors %}
+        <tr>
+          <td>{{data.id}}</td>
+          <td>{{data.names}}</td>
+        </tr>
+{% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
