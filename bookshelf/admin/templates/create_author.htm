@@ -1,0 +1,10 @@
+{% extends 'layout.htm' %}
+{% block container %}
+  <div class="top-pad">
+    <form method="POST" action="/admin/author/create">
+      {{ form.csrf_token }}
+      {{ form.names.label }} {{ form.names(size=20) }}
+      <input type="submit" value="Create">
+  </form>
+  </div>
+{% endblock %}
