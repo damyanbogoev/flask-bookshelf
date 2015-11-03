@@ -6,18 +6,21 @@ class BaseConfig(object):
     TESTING = False
     # sqlite :memory: identifier is the default if no filepath is present
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
+    SECRET_KEY = '1d94e52c-1c89-4515-b87a-f48cf3cb7f0b'
 
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///C:/Temp/bookshelf.db'
+    SECRET_KEY = 'a9eec0e0-23b7-4788-9a92-318347b9a39f'
 
 
 class TestingConfig(BaseConfig):
     DEBUG = False
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
+    SECRET_KEY = '792842bc-c4df-4de1-9177-d5207bd9faa6'
 
 config = {
     "development": "bookshelf.config.DevelopmentConfig",

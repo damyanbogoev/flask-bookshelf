@@ -1,8 +1,25 @@
-body {
-  padding-top: 50px;
+ul.flashes, ul.errors {
+    list-style: none;
+    margin: 10px 10px 0 10px;
+    padding: 0;
 }
 
-.top-pad {
-  padding: 40px 15px;
-  text-align: center;
+ul.flashes li {
+    background: #DFF2BF;
+    color: #4F8A10;
+    border: 1px solid #81CEC6;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 4px;
+    font-size: 15px;
+}
+
+ul.errors li {
+    background: #FFBABA;
+    color: #D8000C;
+    border: 1px solid #81CEC6;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 4px;
+    font-size: 15px;
 }

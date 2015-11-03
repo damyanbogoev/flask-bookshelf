@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, flash
+from flask import Blueprint, redirect, request, url_for, flash
 from bookshelf.admin.forms.author_forms import CreateAuthorForm
 from bookshelf.data.models import Author, db
 
@@ -17,6 +18,9 @@ def create_author():
     if request.method == 'POST' and form.validate():
         author = Author(form.names.data)
         db.session.add(author)
+        db.session.commit()
         flash('Author successfully created.')
+
         return redirect(url_for('main.display_authors'))
+
     return render_template('create_author.htm', form=form)

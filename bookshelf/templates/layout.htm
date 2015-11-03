@@ -7,7 +7,7 @@
     <title>Flask Bookshelf</title>
     <meta charset="utf-8">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> -->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
@@ -32,6 +32,15 @@
       </div>
     </nav>
     <div class="container">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
     {% block container %}{% endblock %}
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

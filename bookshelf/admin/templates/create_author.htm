@@ -1,5 +1,12 @@
 {% extends 'layout.htm' %}
 {% block container %}
+  {% if form.names.errors %}
+    <ul class="errors">
+    {% for error in form.names.errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+    </ul><br/>
+  {% endif %}
   <div class="top-pad">
     <form method="POST" action="/admin/author/create">
       {{ form.csrf_token }}
