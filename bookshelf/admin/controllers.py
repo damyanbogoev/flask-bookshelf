@@ -19,9 +19,16 @@ def create_author():
     	names = form.names.data
     	current_app.logger.info('Adding a new author %s.', (names))
         author = Author(names)
-        db.session.add(author)
-        db.session.commit()
-        flash('Author successfully created.')
+
+        try:
+        	db.session.add(author)
+        	db.session.commit()
+        	flash('Author successfully created.')
+        except Exception as e:
+        	flash('Author was not created.')
+        	current_app.logger.error(e)
+
+        	return redirect(url_for('admin.create_author'))
 
         return redirect(url_for('main.display_authors'))
 

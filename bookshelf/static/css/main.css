@@ -5,9 +5,9 @@ ul.flashes, ul.errors {
 }
 
 ul.flashes li {
-    background: #DFF2BF;
-    color: #4F8A10;
-    border: 1px solid #81CEC6;
+    /*background: #DFF2BF;*/
+    /*color: #4F8A10;*/
+    /*border: 1px solid #81CEC6;*/
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     padding: 4px;
