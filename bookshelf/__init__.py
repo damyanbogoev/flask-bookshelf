@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from utils import get_instance_folder_path
+from bookshelf.utils import get_instance_folder_path
 from bookshelf.main.controllers import main
 from bookshelf.admin.controllers import admin
 from bookshelf.config import configure_app
@@ -19,8 +19,8 @@ app.register_blueprint(admin, url_prefix='/admin')
 
 @app.errorhandler(404)
 def page_not_found(error):
-	app.logger.error('Page not found: %s', (request.path))
-	return render_template('404.htm'), 404
+    app.logger.error('Page not found: %s', (request.path, error))
+    return render_template('404.htm'), 404
 
 @app.errorhandler(500)
 def internal_server_error(error):
@@ -28,6 +28,6 @@ def internal_server_error(error):
     return render_template('500.htm'), 500
 
 @app.errorhandler(Exception)
-def unhandled_exception(e):
-    app.logger.error('Unhandled Exception: %s', (e))
+def unhandled_exception(error):
+    app.logger.error('Unhandled Exception: %s', (error))
     return render_template('500.htm'), 500
