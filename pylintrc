@@ -4,3 +4,6 @@ reports=no
 
 [MESSAGES CONTROL]
 disable=print-statement
+
+[TYPECHECK]
+generated-members=Column,Integer,String,ForeignKey,backref,relationship,Table,Boolean,query,add,commit
