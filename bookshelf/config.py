@@ -1,5 +1,5 @@
 from bookshelf.data.models import db, Role, User
-from flask.ext.security import Security, SQLAlchemyUserDatastore
+from flask_security import Security, SQLAlchemyUserDatastore
 import os
 import logging
 
