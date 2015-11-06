@@ -14,6 +14,7 @@ class BaseConfig(object):
     LOGGING_LOCATION = 'bookshelf.log'
     LOGGING_LEVEL = logging.DEBUG
     SECURITY_REGISTERABLE = True
+    SECURITY_CONFIRMABLE = False
 
 
 class DevelopmentConfig(BaseConfig):
