@@ -7,4 +7,4 @@ install:
 script:
   - nosetests
   - pylint --errors-only bookshelf
-  - pylint --errors-only tests
+  - pylint tests
