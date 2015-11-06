@@ -1,5 +1,5 @@
 from bookshelf import app
-from bookshelf.data.models import db, Author, Book
+from bookshelf.data.models import db, Author, Book, Role, User
 
 with app.app_context():
     db.drop_all()
@@ -15,5 +15,17 @@ with app.app_context():
     db.session.add(author2)
     db.session.add(book1)
     db.session.add(book2)
+
+    role1 = Role('admin')
+    role2 = Role('editor')
+    role3 = Role('reader')
+    db.session.add(role1)
+    db.session.add(role2)
+    db.session.add(role3)
+
+    user1 = User('admin', '1234', True)
+    user2 = User('editor', '2345', True)
+    db.session.add(user1)
+    db.session.add(user2)
 
     db.session.commit()
