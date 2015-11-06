@@ -1,3 +1,5 @@
+from bookshelf.data.models import db, Role, User
+from flask.ext.security import Security, SQLAlchemyUserDatastore
 import os
 import logging
 
@@ -15,7 +17,7 @@ class BaseConfig(object):
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
-    TESTING = True
+    TESTING = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///C:/Temp/bookshelf.db'
     SECRET_KEY = 'a9eec0e0-23b7-4788-9a92-318347b9a39f'
 
@@ -43,3 +45,6 @@ def configure_app(app):
     formatter = logging.Formatter(app.config['LOGGING_FORMAT'])
     handler.setFormatter(formatter)
     app.logger.addHandler(handler)
+    # Configure Security
+    user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+    security = Security(app, user_datastore)
