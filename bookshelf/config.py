@@ -13,6 +13,7 @@ class BaseConfig(object):
     LOGGING_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     LOGGING_LOCATION = 'bookshelf.log'
     LOGGING_LEVEL = logging.DEBUG
+    SECURITY_REGISTERABLE = True
 
 
 class DevelopmentConfig(BaseConfig):
