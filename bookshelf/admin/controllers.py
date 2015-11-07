@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, flash
 from flask import current_app, redirect, request, url_for
+from flask_security.decorators import roles_required
 from bookshelf.admin.forms.author_forms import CreateAuthorForm
 from bookshelf.data.models import Author, db
 from sqlalchemy import exc
@@ -9,11 +10,13 @@ admin = Blueprint('admin', __name__, template_folder='templates')
 
 
 @admin.route('/')
+@roles_required('admin')
 def index():
     return render_template('admin_index.htm')
 
 
 @admin.route('/author/create', methods=['GET', 'POST'])
+@roles_required('admin')
 def create_author():
     form = CreateAuthorForm(request.form)
     if request.method == 'POST' and form.validate():
