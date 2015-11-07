@@ -59,10 +59,5 @@ class User(db.Model, UserMixin):
     roles = db.relationship('Role', secondary=roles_users,
                             backref=db.backref('users', lazy='dynamic'))
 
-    def __init__(self, email, password, active):
-        self.email = email
-        self.password = password
-        self.active = active
-
     def __repr__(self):
         return '<User %r>' % (self.email)
