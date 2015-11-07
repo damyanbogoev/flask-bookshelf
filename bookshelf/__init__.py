@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flask_security import current_user
 from bookshelf.utils import get_instance_folder_path
 from bookshelf.main.controllers import main
 from bookshelf.admin.controllers import admin
@@ -31,3 +32,7 @@ def internal_server_error(error):
 def unhandled_exception(error):
     app.logger.error('Unhandled Exception: %s', (error))
     return render_template('500.htm'), 500
+
+@app.context_processor
+def inject_user():
+    return dict(user=current_user)
