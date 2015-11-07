@@ -49,4 +49,4 @@ def configure_app(app):
     app.logger.addHandler(handler)
     # Configure Security
     user_datastore = SQLAlchemyUserDatastore(db, User, Role)
-    Security(app, user_datastore)
+    app.security = Security(app, user_datastore)
