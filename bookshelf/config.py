@@ -1,4 +1,5 @@
 from bookshelf.data.models import db, Role, User
+from flask_cache import Cache
 from flask_security import Security, SQLAlchemyUserDatastore
 import os
 import logging
@@ -14,6 +15,7 @@ class BaseConfig(object):
     LOGGING_LOCATION = 'bookshelf.log'
     LOGGING_LEVEL = logging.DEBUG
     SECURITY_CONFIRMABLE = False
+    CACHE_TYPE = 'simple'
 
 
 class DevelopmentConfig(BaseConfig):
@@ -49,3 +51,5 @@ def configure_app(app):
     # Configure Security
     user_datastore = SQLAlchemyUserDatastore(db, User, Role)
     app.security = Security(app, user_datastore)
+    # Configure Caching
+    app.cache = Cache(app)
