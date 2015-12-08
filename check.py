@@ -14,7 +14,7 @@ envdump = EnvironmentDump(app, "/environment",
                           include_process=False, include_config=True)
 
 def sqlite_available():
-    # TODO: add precise check against the database
+    # add precise check against the database
     return True, "sqlite ok"
 
 health.add_check(sqlite_available)
