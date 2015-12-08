@@ -8,3 +8,4 @@ script:
   - nosetests
   - pylint bookshelf
   - pylint tests
+  - pylint check.py
