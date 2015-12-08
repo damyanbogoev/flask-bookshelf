@@ -1,4 +1,5 @@
 from bookshelf.data.models import db, Role, User
+from flask_compress import Compress
 from flask_security import Security, SQLAlchemyUserDatastore
 import os
 import logging
@@ -15,6 +16,9 @@ class BaseConfig(object):
     LOGGING_LEVEL = logging.DEBUG
     SECURITY_CONFIRMABLE = False
     CACHE_TYPE = 'simple'
+    COMPRESS_MIMETYPES = ['text/html', 'text/css', 'text/xml', 'application/json', 'application/javascript']
+    COMPRESS_LEVEL = 6
+    COMPRESS_MIN_SIZE = 500
 
 
 class DevelopmentConfig(BaseConfig):
@@ -50,3 +54,5 @@ def configure_app(app):
     # Configure Security
     user_datastore = SQLAlchemyUserDatastore(db, User, Role)
     app.security = Security(app, user_datastore)
+    # Configure Compressing
+    Compress(app)
