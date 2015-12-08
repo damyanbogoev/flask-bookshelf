@@ -17,8 +17,8 @@ Branch names are hyperlinks to the corresponding repository branches.
   <li><a href="http://damyanon.net/flask-series-views" title="Flask Series: Views and Web Forms">Views and Web Forms</a></li>
   <li><a href="http://damyanon.net/flask-series-logging" title="Flask Series: Error Management">Error Management</a></li>
   <li><a href="http://damyanon.net/flask-series-security" title="Flask Series: Security">Security</a></li>
-  <li>Optimizations: Caching, GZIP Compression and CDN(optimization)</li>
-  <li>Health Checking and Monitoring(monitoring)</li>
-  <li>Internationalization(localize)</li>
-  <li>Deployment(deploy)</li>
+  <li>Optimizations: Caching, GZIP Compression and CDN</li>
+  <li>Health Checking and Monitoring</li>
+  <li>Internationalization</li>
+  <li>Deployment</li>
 </ol>
