@@ -16,7 +16,8 @@ class BaseConfig(object):
     LOGGING_LEVEL = logging.DEBUG
     SECURITY_CONFIRMABLE = False
     CACHE_TYPE = 'simple'
-    COMPRESS_MIMETYPES = ['text/html', 'text/css', 'text/xml', 'application/json', 'application/javascript']
+    COMPRESS_MIMETYPES = ['text/html', 'text/css', 'text/xml', \
+'application/json', 'application/javascript']
     COMPRESS_LEVEL = 6
     COMPRESS_MIN_SIZE = 500
 
