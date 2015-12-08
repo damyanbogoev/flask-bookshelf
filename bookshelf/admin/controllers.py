@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, flash
 from flask import current_app, redirect, request, url_for
 from flask_security.decorators import roles_required
 from bookshelf.admin.forms.author_forms import CreateAuthorForm
+from bookshelf.cache import cache
 from bookshelf.data.models import Author, db
 from sqlalchemy import exc
 
@@ -27,6 +28,7 @@ def create_author():
         try:
             db.session.add(author)
             db.session.commit()
+            cache.delete('display_authors')
             flash('Author successfully created.')
         except exc.SQLAlchemyError as e:
             flash('Author was not created.')

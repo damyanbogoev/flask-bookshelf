@@ -1,5 +1,4 @@
 from bookshelf.data.models import db, Role, User
-from flask_cache import Cache
 from flask_security import Security, SQLAlchemyUserDatastore
 import os
 import logging
@@ -51,5 +50,3 @@ def configure_app(app):
     # Configure Security
     user_datastore = SQLAlchemyUserDatastore(db, User, Role)
     app.security = Security(app, user_datastore)
-    # Configure Caching
-    app.cache = Cache(app)
