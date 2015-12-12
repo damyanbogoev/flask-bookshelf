@@ -10,7 +10,7 @@ app.config.from_pyfile('config.cfg', silent=True)
 
 health = HealthCheck(app, "/healthcheck")
 envdump = EnvironmentDump(app, "/environment",
-                          include_python=True, include_os=True,
+                          include_python=True, include_os=False,
                           include_process=False, include_config=True)
 
 def sqlite_available():
