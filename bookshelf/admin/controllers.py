@@ -9,12 +9,10 @@ from sqlalchemy import exc
 
 admin = Blueprint('admin', __name__, template_folder='templates')
 
-
 @admin.route('/')
 @roles_required('admin')
 def index():
     return render_template('admin_index.htm')
-
 
 @admin.route('/author/create', methods=['GET', 'POST'])
 @roles_required('admin')
@@ -28,7 +26,7 @@ def create_author():
         try:
             db.session.add(author)
             db.session.commit()
-            cache.delete('display_authors')
+            # cache.delete('/main/authors/')
             flash('Author successfully created.')
         except exc.SQLAlchemyError as e:
             flash('Author was not created.')

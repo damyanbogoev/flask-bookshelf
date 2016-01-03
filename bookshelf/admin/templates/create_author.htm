@@ -8,7 +8,7 @@
     </ul><br/>
   {% endif %}
   <div class="top-pad">
-    <form method="POST" action="/admin/author/create">
+    <form method="POST" action="{{url_for('admin.create_author')}}">
       {{ form.csrf_token }}
       {{ form.names.label }} {{ form.names(size=20) }}
       <input type="submit" value="Create">

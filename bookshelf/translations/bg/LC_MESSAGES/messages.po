@@ -1,0 +1,52 @@
+# Bulgarian translations for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-01-03 13:47+0200\n"
+"PO-Revision-Date: 2016-01-03 13:48+0200\n"
+"Last-Translator: \n"
+"Language: bg\n"
+"Language-Team: bg <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.2.0\n"
+"X-Generator: Poedit 1.8.6\n"
+
+#: bookshelf/main/templates/authors.htm:7
+msgid "id"
+msgstr "id"
+
+#: bookshelf/main/templates/authors.htm:8
+msgid "names"
+msgstr "имена"
+
+#: bookshelf/templates/index.htm:4 bookshelf/templates/layout.htm:18
+msgid "Flask Bookshelf"
+msgstr "Flask Лавица за Книга"
+
+#: bookshelf/templates/layout.htm:22
+msgid "Authors"
+msgstr "Автори"
+
+#: bookshelf/templates/layout.htm:23
+msgid "Books"
+msgstr "Книги"
+
+#: bookshelf/templates/layout.htm:27
+msgid "Admin"
+msgstr "Админ"
+
+#: bookshelf/templates/layout.htm:30
+msgid "Log In"
+msgstr "Вход"
+
+#: bookshelf/templates/layout.htm:32
+msgid "Log Out"
+msgstr "Изход"

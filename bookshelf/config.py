@@ -1,4 +1,5 @@
 from bookshelf.data.models import db, Role, User
+from flask_babel import Babel
 from flask_compress import Compress
 from flask_security import Security, SQLAlchemyUserDatastore
 import os
@@ -20,6 +21,9 @@ class BaseConfig(object):
 'application/json', 'application/javascript']
     COMPRESS_LEVEL = 6
     COMPRESS_MIN_SIZE = 500
+    SUPPORTED_LANGUAGES = {'bg': 'Bulgarian', 'en': 'English', 'fr': 'Francais'}
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
 class DevelopmentConfig(BaseConfig):
@@ -57,3 +61,5 @@ def configure_app(app):
     app.security = Security(app, user_datastore)
     # Configure Compressing
     Compress(app)
+    # Configure Babel
+    app.babel = Babel(app)
