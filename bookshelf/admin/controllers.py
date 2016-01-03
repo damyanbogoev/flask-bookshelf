@@ -26,7 +26,7 @@ def create_author():
         try:
             db.session.add(author)
             db.session.commit()
-            # cache.delete('/main/authors/')
+            cache.clear()
             flash('Author successfully created.')
         except exc.SQLAlchemyError as e:
             flash('Author was not created.')

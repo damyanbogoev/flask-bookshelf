@@ -1,4 +1,4 @@
-from flask import Blueprint, current_app, g, render_template
+from flask import Blueprint, current_app, render_template
 from bookshelf.cache import cache
 from bookshelf.data.models import Author, Book
 

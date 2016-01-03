@@ -3,7 +3,7 @@
 reports=no
 
 [MESSAGES CONTROL]
-disable=print-statement,C0103,C0111,R0801,R0903
+disable=print-statement,C0103,C0111,R0801,R0903,W0612,W0613
 
 [TYPECHECK]
 generated-members=Column,Integer,String,ForeignKey,backref,relationship,Table,Boolean,query,add,commit

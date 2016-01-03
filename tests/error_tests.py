@@ -19,12 +19,12 @@ class ErrorTests(unittest.TestCase):
         pass
 
     def test_pagenotfound_statuscode(self):
-        result = self.app.get('/missing-page')
+        result = self.app.get('/bg/missing-page/')
 
         self.assertEqual(result.status_code, 404)
 
     def test_pagenotfound_data(self):
-        result = self.app.get('/missing-page')
+        result = self.app.get('/bg/missing-page/')
 
         self.assertIn('Page Not Found', result.data)
 

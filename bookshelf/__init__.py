@@ -1,4 +1,5 @@
 from flask import abort, Flask, g, render_template, request
+from flask_babel import Babel
 from flask_security import current_user
 from bookshelf.utils import get_instance_folder_path
 from bookshelf.main.controllers import main
@@ -12,6 +13,7 @@ app = Flask(__name__,
             instance_relative_config=True,
             template_folder='templates')
 
+babel = Babel(app)
 configure_app(app)
 cache.init_app(app)
 db.init_app(app)
@@ -19,7 +21,7 @@ app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
 @app.url_defaults
 def set_language_code(endpoint, values):
-    if 'lang_code' in values or not g.lang_code:
+    if 'lang_code' in values or not g.get('lang_code', None):
         return
     if app.url_map.is_endpoint_expecting(endpoint, 'lang_code'):
         values['lang_code'] = g.lang_code
@@ -35,11 +37,11 @@ def ensure_lang_support():
     if lang_code and lang_code not in app.config['SUPPORTED_LANGUAGES'].keys():
         return abort(404)
 
-@app.babel.localeselector
+@babel.localeselector
 def get_locale():
     return g.get('lang_code', app.config['BABEL_DEFAULT_LOCALE'])
 
-@app.babel.timezoneselector
+@babel.timezoneselector
 def get_timezone():
     user = g.get('user', None)
     if user is not None:
