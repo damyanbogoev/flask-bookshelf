@@ -17,5 +17,5 @@ Detailed information about the Flask Series steps can be found <a href="http://d
   <li><a href="http://damyanon.net/flask-series-optimizations/" title="Flask Series: Optimizations">Optimizations: Caching, GZIP Compression and CDN</a></li>
   <li><a href="http://damyanon.net/flask-series-monitoring/" title="Flask Series: Health Check and Monitoring">Health Checking and Monitoring</a></li>
   <li><a href="http://damyanon.net/flask-series-internationalization/" title="Flask Series: Internationalization">Internationalization</a></li>
-  <li>Deployment</li>
+  <li><a href="http://damyanon.net/flask-series-deployment/" title="Flask Series: Deployment">Deployment</a></li>
 </ol>
