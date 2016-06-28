@@ -4,7 +4,7 @@ from healthcheck import HealthCheck, EnvironmentDump
 import os
 
 app = Flask(__name__)
-config_name = os.getenv('FLAKS_CONFIGURATION', 'default')
+config_name = os.getenv('FLASK_CONFIGURATION', 'default')
 app.config.from_object(config[config_name])
 app.config.from_pyfile('config.cfg', silent=True)
 
@@ -13,11 +13,13 @@ envdump = EnvironmentDump(app, "/environment",
                           include_python=True, include_os=False,
                           include_process=False, include_config=True)
 
+
 def sqlite_available():
     # add precise check against the database
     return True, "sqlite ok"
 
 health.add_check(sqlite_available)
+
 
 def application_data():
     return {"maintainer": "Damyan Bogoev",
