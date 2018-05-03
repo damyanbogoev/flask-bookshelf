@@ -1,5 +1,6 @@
-from bookshelf import app
 import unittest
+from bookshelf import app
+
 
 class ErrorTests(unittest.TestCase):
 

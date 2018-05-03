@@ -1,7 +1,8 @@
-from bookshelf.config import config
+import os
 from flask import Flask
 from healthcheck import HealthCheck, EnvironmentDump
-import os
+from bookshelf.config import config
+
 
 app = Flask(__name__)
 config_name = os.getenv('FLASK_CONFIGURATION', 'default')
@@ -18,12 +19,14 @@ def sqlite_available():
     # add precise check against the database
     return True, "sqlite ok"
 
+
 health.add_check(sqlite_available)
 
 
 def application_data():
     return {"maintainer": "Damyan Bogoev",
             "git_repo": "https://github.com/damyanbogoev/flask-bookshelf"}
+
 
 envdump.add_section("application", application_data)
 
