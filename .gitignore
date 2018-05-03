@@ -55,3 +55,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# DB files
+*.db
+
+# VSCode
+settings.json
