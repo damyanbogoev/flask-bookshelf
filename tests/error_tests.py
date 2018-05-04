@@ -1,5 +1,6 @@
-from bookshelf import app
 import unittest
+from bookshelf import app
+
 
 class ErrorTests(unittest.TestCase):
 
@@ -26,7 +27,7 @@ class ErrorTests(unittest.TestCase):
     def test_pagenotfound_data(self):
         result = self.app.get('/bg/missing-page/')
 
-        self.assertIn('Page Not Found', result.data)
+        self.assertIn('Not Found', result.data.decode('utf-8'))
 
     def test_unhandledexception_code(self):
         result = self.app.put('/books')
@@ -36,4 +37,4 @@ class ErrorTests(unittest.TestCase):
     def test_unhandledexception_data(self):
         result = self.app.put('/books')
 
-        self.assertIn('Something Went Wrong', result.data)
+        self.assertIn('Something Went Wrong', result.data.decode('utf-8'))

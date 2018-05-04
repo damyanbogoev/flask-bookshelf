@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initialscale=1">
-    <title>Flask Bookshelf</title>
-    <meta charset="utf-8">
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  </head>
-  <body>
 
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="{{ url_for('home') }}">{{ _('Flask Bookshelf') }}</a>
-        </div>
-        <div>
-          <ul class="nav navbar-nav">
-            <li><a class="navbar-brand" href="{{ url_for('main.display_authors') }}">{{ _('Authors') }}</a></li>
-            <li><a class="navbar-brand" href="{{ url_for('main.display_books') }}">{{ _('Books') }}</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            {% if user.has_role('admin') %}
-              <li><a class="navbar-brand" href="{{ url_for('admin.index') }}">{{ _('Admin') }}</a></li>
-            {% endif %}
-            {% if not user.is_authenticated() %}
-              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> {{ _('Log In') }}</a></li>
-            {% else %}
-              <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> {{ _('Log Out') }}</a></li>
-            {% endif %}
-          </ul>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initialscale=1">
+  <title>Flask Bookshelf</title>
+  <meta charset="utf-8">
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{ url_for('home') }}">{{ _('Flask Bookshelf') }}</a>
       </div>
-    </nav>
-    <div class="container">
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul class="flashes">
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-        </ul><br/>
-      {% endif %}
-    {% endwith %}
-    {% block container %}{% endblock %}
+      <div>
+        <ul class="nav navbar-nav">
+          <li>
+            <a class="navbar-brand" href="{{ url_for('main.display_authors') }}">{{ _('Authors') }}</a>
+          </li>
+          <li>
+            <a class="navbar-brand" href="{{ url_for('main.display_books') }}">{{ _('Books') }}</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {% if user.has_role('admin') %}
+          <li>
+            <a class="navbar-brand" href="{{ url_for('admin.index') }}">{{ _('Admin') }}</a>
+          </li>
+          {% endif %} {% if not user.is_authenticated %}
+          <li>
+            <a href="/login">
+              <span class="glyphicon glyphicon-log-in"></span> {{ _('Log In') }}</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="/logout">
+              <span class="glyphicon glyphicon-log-out"></span> {{ _('Log Out') }}</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  </body>
+  </nav>
+  <div class="container">
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    <br/> {% endif %} {% endwith %} {% block container %}{% endblock %}
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+
 </html>

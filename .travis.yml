@@ -1,11 +1,7 @@
 language: python
 python:
-  - "2.7"
-# install pip packages
+  - "3.6"
 install:
-  - "pip install -r requirements.txt"
+  - make restore
 script:
-  - nosetests
-  - pylint bookshelf
-  - pylint tests
-  - pylint check.py
+  - make check

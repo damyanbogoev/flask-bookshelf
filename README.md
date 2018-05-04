@@ -2,7 +2,7 @@
 
 A project describing how to implement a Flask based application.
 
-Detailed information about the Flask Series steps can be found <a href="http://damyanon.net/?s=Flask+Series" title="Flask Series">here</a>.
+Detailed information about the Flask Series steps can be found <a href="https://damyanon.net/tags/flask-series/" title="Flask Series">here</a>.
 
 <ol start="0">
   <li><a href="http://damyanon.net/flask-series-environment/" title="Flask Series: Prepare the Environment">Prepare the Environment</a></li>
@@ -19,3 +19,5 @@ Detailed information about the Flask Series steps can be found <a href="http://d
   <li><a href="http://damyanon.net/flask-series-internationalization/" title="Flask Series: Internationalization">Internationalization</a></li>
   <li><a href="http://damyanon.net/flask-series-deployment/" title="Flask Series: Deployment">Deployment</a></li>
 </ol>
+
+*The demo application is updated with the latest major Flask 1.0 release.*

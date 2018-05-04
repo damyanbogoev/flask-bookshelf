@@ -1,5 +1,6 @@
-from bookshelf import app
 import unittest
+from bookshelf import app
+
 
 class CompressTests(unittest.TestCase):
 
@@ -12,8 +13,8 @@ class CompressTests(unittest.TestCase):
         pass
 
     def test_mimetypes(self):
-        defaults = ['text/html', 'text/css', 'text/xml', \
-'application/json', 'application/javascript']
+        defaults = ['text/html', 'text/css', 'text/xml',
+                    'application/json', 'application/javascript']
 
         self.assertEqual(self.app.config['COMPRESS_MIMETYPES'], defaults)
 
