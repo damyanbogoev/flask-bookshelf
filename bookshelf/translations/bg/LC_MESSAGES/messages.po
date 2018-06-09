@@ -19,6 +19,10 @@ msgstr ""
 "Generated-By: Babel 2.2.0\n"
 "X-Generator: Poedit 1.8.6\n"
 
+#: bookshelf/admin/forms/author_forms.py:6
+msgid "Names"
+msgstr "Имена"
+
 #: bookshelf/admin/templates/admin_index.htm:4
 msgid "Create an Author"
 msgstr "Създайте автор"

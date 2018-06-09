@@ -19,6 +19,10 @@ msgstr ""
 "Last-Translator: \n"
 "X-Generator: Poedit 1.8.6\n"
 
+#: bookshelf/admin/forms/author_forms.py:6
+msgid "Names"
+msgstr "Noms"
+
 #: bookshelf/admin/templates/admin_index.htm:4
 msgid "Create an Author"
 msgstr "Ajouter un auteur"
