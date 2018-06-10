@@ -11,7 +11,7 @@
     <form method="POST" action="{{url_for('admin.create_author')}}">
       {{ form.csrf_token }}
       {{ form.names.label }} {{ form.names(size=20) }}
-      <input type="submit" value="Create">
+      <input type="submit" value="{{ _('Create') }}">
   </form>
   </div>
 {% endblock %}
