@@ -31,7 +31,6 @@ pycodestyle==2.4.0
 pycparser==2.18
 pylint==1.8.4
 pytz==2018.4
-requirements==0.1
 six==1.11.0
 speaklater==1.3
 SQLAlchemy==1.3.0
