@@ -3,7 +3,6 @@ from bookshelf import app
 
 
 class ErrorTests(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         pass
@@ -20,21 +19,21 @@ class ErrorTests(unittest.TestCase):
         pass
 
     def test_pagenotfound_statuscode(self):
-        result = self.app.get('/bg/missing-page/')
+        result = self.app.get("/bg/missing-page/")
 
         self.assertEqual(result.status_code, 404)
 
     def test_pagenotfound_data(self):
-        result = self.app.get('/bg/missing-page/')
+        result = self.app.get("/bg/missing-page/")
 
-        self.assertIn('Not Found', result.data.decode('utf-8'))
+        self.assertIn("Not Found", result.data.decode("utf-8"))
 
     def test_unhandledexception_code(self):
-        result = self.app.put('/books')
+        result = self.app.put("/books")
 
         self.assertEqual(result.status_code, 500)
 
     def test_unhandledexception_data(self):
-        result = self.app.put('/books')
+        result = self.app.put("/books")
 
-        self.assertIn('Something Went Wrong', result.data.decode('utf-8'))
+        self.assertIn("Something Went Wrong", result.data.decode("utf-8"))

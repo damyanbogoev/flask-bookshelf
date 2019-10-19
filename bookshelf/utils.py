@@ -6,4 +6,4 @@ def get_app_base_path():
 
 
 def get_instance_folder_path():
-    return os.path.join(get_app_base_path(), 'instance')
+    return os.path.join(get_app_base_path(), "instance")
