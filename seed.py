@@ -4,11 +4,11 @@ from bookshelf import app
 
 
 def create_authors_and_books(ctx):
-    author1 = Author('Ivan Vazov')
-    author2 = Author('Hristo Botev')
+    author1 = Author("Ivan Vazov")
+    author2 = Author("Hristo Botev")
 
-    book1 = Book('Epic of the Forgotten', author1, '15705091.jpg', 5)
-    book2 = Book('The Poems of Hristo Botev', author2, '20911420.jpg', 5)
+    book1 = Book("Epic of the Forgotten", author1, "15705091.jpg", 5)
+    book2 = Book("The Poems of Hristo Botev", author2, "20911420.jpg", 5)
 
     ctx.session.add(author1)
     ctx.session.add(author2)
@@ -19,13 +19,15 @@ def create_authors_and_books(ctx):
 
 
 def create_roles(ctx):
-    ctx.create_role(name='admin')
+    ctx.create_role(name="admin")
     ctx.commit()
 
 
 def create_users(ctx):
-    users = [('admin@test.com', 'admin', '1234', ['admin'], True),
-             ('user@test.com', 'user', '6789', [], True)]
+    users = [
+        ("admin@test.com", "admin", "1234", ["admin"], True),
+        ("user@test.com", "user", "6789", [], True),
+    ]
     for user in users:
         email = user[0]
         username = user[1]
@@ -35,8 +37,7 @@ def create_users(ctx):
             password = encrypt_password(password)
         roles = [ctx.find_or_create_role(rn) for rn in user[3]]
         ctx.commit()
-        user = ctx.create_user(
-            email=email, password=password, active=is_active)
+        user = ctx.create_user(email=email, password=password, active=is_active)
         ctx.commit()
         for role in roles:
             ctx.add_role_to_user(user, role)
